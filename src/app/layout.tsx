@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+import { UseContext } from "@/context";
+import { IBM_Plex_Sans_Thai } from "next/font/google";
+import { Castoro } from "next/font/google";
+
+import { ConfigProvider } from "antd";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+
+// ตั้งค่า IBM Plex Sans Thai
+const ibmPlexSansThai = IBM_Plex_Sans_Thai({
+  subsets: ["thai"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-sans-thai",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// ตั้งค่า Castoro
+const castoro = Castoro({
+  weight: "400",
+  style: "italic",
   subsets: ["latin"],
+  variable: "--font-castoro",
 });
 
 export const metadata: Metadata = {
@@ -19,15 +30,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ibmPlexSansThai.variable} ${castoro.variable} antialiased bg-gray-100 h-screen`}
       >
-        {children}
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#49A569", // ใช้สีเขียว
+            },
+          }}
+        >
+          <UseContext>
+            <AntdRegistry>{children}</AntdRegistry>
+          </UseContext>
+        </ConfigProvider>
       </body>
     </html>
   );
