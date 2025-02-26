@@ -2,8 +2,16 @@
 
 import SignInbtn from "@/components/button/SignInbtn";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter();
+
+  const handleSignIn = () => {
+    // ทำการตรวจสอบสิทธิ์การเข้าระบบ (authenticate) ก่อนถ้าจำเป็น จากนั้นนำทางไปยังหน้า home
+    router.push("/home");
+  };
+
   return (
     <div className="flex flex-col sm:flex-row bg-green-500 h-full">
       <div className="flex flex-col items-center gap-4 justify-center sm:order-2 bg-green-300 rounded-b-[36px] sm:rounded-none sm:rounded-s-[36px]  flex-1 p-4">
@@ -28,9 +36,8 @@ const Page = () => {
               placeholder="Username"
               className="p-2 border border-gray-300 rounded-md h-[40px]"
             />
-            <a href="/home">
-              <SignInbtn />
-            </a>
+
+            <SignInbtn onClick={handleSignIn} />
           </div>
         </div>
       </div>
