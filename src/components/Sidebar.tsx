@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen }: { isOpen: boolean }) => {
     <aside
       className={`${
         isOpen ? "translate-x-0" : "-translate-x-full"
-      } fixed top-16 left-0 w-64 h-full  text-gray-800 transform transition-transform duration-300 z-30 md:translate-x-0 `}
+      } fixed top-16 left-0 w-64 h-full  text-gray-800 transform transition-transform duration-300 z-30 md:translate-x-0 bg-green-100`}
     >
       <div className="p-4">
         <ul className="space-y-4">

@@ -1,6 +1,6 @@
 import React from "react";
 import Star from "./Star";
-import { FaUserCircle } from "react-icons/fa";
+import { FaRegComment, FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 
 interface PostProps {
@@ -36,7 +36,9 @@ const Post: React.FC<PostProps> = ({
             <div>
               <div className="flex items-center justify-center gap-2">
                 <FaUserCircle className="text-3xl" />
-                <h3 className="text-lg text-gray-300">{userName}</h3>
+                <h3 className="text-lg font-medium text-gray-300">
+                  {userName}
+                </h3>
               </div>
 
               {/* Conditional Rendering for Star or Edit/Delete Buttons */}
@@ -64,18 +66,22 @@ const Post: React.FC<PostProps> = ({
                 />
               )}
             </div>
-            <div>
-              <span className="inline-block bg-slate-200 text-gray-600 text-xs font-medium px-2 py-1 rounded-full mt-1">
+            <div className="mb-2">
+              <span className="inline-block bg-stone-200 bg-opacity-40 text-gray-600 text-xs font-medium px-2 py-1 rounded-full ">
                 {category}
               </span>
             </div>
           </div>
         </div>
-        <div></div>
-        <div>
-          <h2 className="mt-3 text-gray-900 text-lg font-semibold">{title}</h2>
-          <p className="text-gray-600 text-sm mt-2">{description}</p>
-          <span>{comments} Comments</span>
+
+        <div className="flex flex-col gap-1">
+          <h2 className=" text-lg font-semibold">{title}</h2>
+          <p className=" text-sm ">{description}</p>
+          <div className="flex gap-2 justify-start items-center text-gray-300 ">
+            <FaRegComment />
+
+            <span>{comments} Comments</span>
+          </div>
         </div>
       </div>
     </Link>

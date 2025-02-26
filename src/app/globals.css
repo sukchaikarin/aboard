@@ -13,6 +13,14 @@
     --foreground: #ededed;
   }
 }
+.ant-select-arrow {
+  color: black !important; /* กำหนดสีลูกศร */
+}
+
+/* เปลี่ยนสีลูกศรเมื่อ Select ถูกเปิด */
+.ant-select-open .ant-select-arrow {
+  color: black !important;
+}
 
 body {
   @apply font-sans;

@@ -3,10 +3,10 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 const Navbar = ({ onSidebarToggle }: { onSidebarToggle: () => void }) => {
   return (
-    <header className="w-full bg-blue-700 text-white p-4 flex justify-between items-center fixed top-0 z-40 h-16">
+    <header className="w-full bg-green-500 text-white p-4 flex justify-between items-center fixed top-0 z-40 h-16">
       {/* Logo */}
       <div className="flex items-center">
-        <span className="text-lg font-bold">My App</span>
+        <span className="text-lg font-bold font-castoro">a Board</span>
       </div>
 
       {/* Hamburger for mobile */}

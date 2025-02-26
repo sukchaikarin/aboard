@@ -10,6 +10,7 @@ const posts = [
       "The afterlife sitcom The Good Place comes to its culmination, the show’s two protagonists, Eleanor and Chidi, contemplate their future. Having lived thousands upon thousands of lifetimes together, and having experienced virtually everything this life has to offer.",
     title: "The Beginning of the End of the World",
     userName: "Jessica",
+    isStarred: false,
   },
   {
     id: "2",
@@ -19,6 +20,7 @@ const posts = [
       "Exploring the vastness of the universe, scientists have discovered new galaxies that challenge our understanding of space and time.",
     title: "The Wonders of the Universe",
     userName: "Michael",
+    isStarred: true,
   },
   {
     id: "3",
@@ -28,6 +30,7 @@ const posts = [
       "Artificial Intelligence is shaping the future in ways we never imagined, from healthcare to autonomous vehicles.",
     title: "The Rise of AI",
     userName: "Sophia",
+    isStarred: true,
   },
   // เพิ่มโพสต์อื่นๆ ได้ตามต้องการ
 ];
@@ -35,7 +38,7 @@ const isLogin = false;
 
 const PostList = () => {
   return (
-    <div className="flex flex-col container mx-auto rounded-2xl bg-white ">
+    <div className="flex flex-col  mx-auto rounded-2xl bg-white ">
       {posts.map((post, index) => (
         <React.Fragment key={index}>
           {/* Post Component */}
@@ -47,6 +50,7 @@ const PostList = () => {
             title={post.title}
             userName={post.userName}
             isLogin={isLogin}
+            isStarred={post.isStarred}
           />
           {/* Divider: แสดงเฉพาะถ้าไม่ใช่โพสต์สุดท้าย */}
           {index !== posts.length - 1 && (

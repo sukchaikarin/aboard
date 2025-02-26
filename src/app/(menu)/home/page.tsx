@@ -6,11 +6,8 @@ import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
   return (
-    <main className="p-6 ml-5 ">
+    <main className="mt-5  flex flex-col gap-6">
       <SearchBar />
-
-      <h1 className="text-2xl font-bold mb-6">All Blogs</h1>
-
       <PostList />
     </main>
   );
