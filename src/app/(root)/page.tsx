@@ -28,8 +28,9 @@ const Page = () => {
               placeholder="Username"
               className="p-2 border border-gray-300 rounded-md h-[40px]"
             />
-
-            <SignInbtn />
+            <a href="/home">
+              <SignInbtn />
+            </a>
           </div>
         </div>
       </div>
